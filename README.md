@@ -1,5 +1,4 @@
-# NatSpeech
-# Detection of Speech in Naturalistic Environments
+# NatSpeech: Detection of Speech in Naturalistic Environments
 
 NatSpeech is a speech activity detection (SAD) algorithm that work in naturalistic settings without any constraints on the recorded data and therefore the data is not recorded in lab-setting like most of the publiuc datasets. NatSpeech is a deep learning model built with deeplearning4j https://deeplearning4j.org. 
 
