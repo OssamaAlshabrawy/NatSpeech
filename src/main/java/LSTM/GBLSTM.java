@@ -134,25 +134,25 @@ public class GBLSTM {
                 .addVertex("Mul_2",
                         new ElementWiseVertex(ElementWiseVertex.Op.Product), "gated_1_1", "gated_2_2")
                 .addLayer("blstm1",
-                        new Bidirectional(new LSTM.Builder().nIn(128).nOut(128).activation(Activation.TANH).dropOut(0.6).gradientNormalization(GradientNormalization.RenormalizeL2PerParamType).build()), "Mul_2")
+                        new Bidirectional(new LSTM.Builder().nIn(128).nOut(128).activation(Activation.TANH).dropOut(0.7).gradientNormalization(GradientNormalization.RenormalizeL2PerParamType).build()), "Mul_2")
                 .addLayer("blstm2",
-                        new Bidirectional(new LSTM.Builder().nIn(128).nOut(128).activation(Activation.TANH).dropOut(0.6).gradientNormalization(GradientNormalization.RenormalizeL2PerParamType).build()), "blstm1")
+                        new Bidirectional(new LSTM.Builder().nIn(128).nOut(128).activation(Activation.TANH).dropOut(0.7).gradientNormalization(GradientNormalization.RenormalizeL2PerParamType).build()), "blstm1")
                 .addLayer("blstm3",
-                        new Bidirectional(new LSTM.Builder().nIn(128).nOut(128).activation(Activation.TANH).dropOut(0.6).gradientNormalization(GradientNormalization.RenormalizeL2PerParamType).build()), "blstm2")
+                        new Bidirectional(new LSTM.Builder().nIn(128).nOut(128).activation(Activation.TANH).dropOut(0.7).gradientNormalization(GradientNormalization.RenormalizeL2PerParamType).build()), "blstm2")
                 .addLayer("blstm4",
-                        new Bidirectional(new LSTM.Builder().nIn(128).nOut(128).activation(Activation.TANH).dropOut(0.6).gradientNormalization(GradientNormalization.RenormalizeL2PerParamType).build()), "blstm3")
+                        new Bidirectional(new LSTM.Builder().nIn(128).nOut(128).activation(Activation.TANH).dropOut(0.7).gradientNormalization(GradientNormalization.RenormalizeL2PerParamType).build()), "blstm3")
                 .addLayer("lstm1",
-                        new LSTM.Builder().nIn(128).nOut(128).activation(Activation.TANH).dropOut(0.6).l2(0.0005).build(), "blstm4")
+                        new LSTM.Builder().nIn(128).nOut(128).activation(Activation.TANH).dropOut(0.7).l2(0.0005).build(), "blstm4")
                 .addLayer("lstm2",
-                        new LSTM.Builder().nIn(128).nOut(128).activation(Activation.TANH).dropOut(0.6).l2(0.0005).build(), "lstm1")
+                        new LSTM.Builder().nIn(128).nOut(128).activation(Activation.TANH).dropOut(0.7).l2(0.0005).build(), "lstm1")
                 .addLayer("lstm3",
-                        new LSTM.Builder().nIn(128).nOut(128).activation(Activation.TANH).dropOut(0.6).l2(0.0005).build(), "lstm2")
+                        new LSTM.Builder().nIn(128).nOut(128).activation(Activation.TANH).dropOut(0.7).l2(0.0005).build(), "lstm2")
                 .addLayer("lstm4",
-                        new LSTM.Builder().nIn(128).nOut(128).activation(Activation.TANH).dropOut(0.6).l2(0.0005).build(), "lstm3")
+                        new LSTM.Builder().nIn(128).nOut(128).activation(Activation.TANH).dropOut(0.7).l2(0.0005).build(), "lstm3")
                 .addLayer("lstm5",
-                        new LSTM.Builder().nIn(128).nOut(128).activation(Activation.TANH).dropOut(0.6).l2(0.0005).build(), "lstm4")
+                        new LSTM.Builder().nIn(128).nOut(128).activation(Activation.TANH).dropOut(0.7).l2(0.0005).build(), "lstm4")
                 .addLayer("lstm6",
-                        new LSTM.Builder().nIn(128).nOut(128).activation(Activation.TANH).dropOut(0.6).l2(0.0005).build(), "lstm5")
+                        new LSTM.Builder().nIn(128).nOut(128).activation(Activation.TANH).dropOut(0.7).l2(0.0005).build(), "lstm5")
                 .addLayer("maxout1",
                         new DenseLayer.Builder().nIn(128).nOut(128).activation(new CustomActivation()).build(), "lstm5")
                 .addLayer("maxout2",
