@@ -1,1 +1,5 @@
 id_*
+.DS_Store
+.idea/
+DL4J.iml
+target/
