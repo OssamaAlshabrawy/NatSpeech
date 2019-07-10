@@ -22,7 +22,7 @@ The wav files should be copied to the wav sub-directory in data directory and an
 2. Run the file: RunTrainingSamples.java, in order to get the annotated frames. Each frames is a row and the label will be the last coulmn in that row. Since we have 256 frame length, then the label will aprrear as the 257th column.
 3. Now, the preprocessed files will be ready to be fed to the deep learning model.
 
-**Training:**
+## Training:
 * Run the file: GBLSTM.java
 
 
