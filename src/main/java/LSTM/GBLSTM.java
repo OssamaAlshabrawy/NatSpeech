@@ -26,6 +26,7 @@ import org.deeplearning4j.api.storage.StatsStorage;
 import org.deeplearning4j.optimize.listeners.ScoreIterationListener;
 import org.deeplearning4j.ui.stats.StatsListener;
 import org.deeplearning4j.ui.storage.FileStatsStorage;
+import org.nd4j.linalg.learning.config.RmsProp;
 import org.nd4j.linalg.lossfunctions.impl.LossMCXENT;
 import org.nd4j.evaluation.classification.ROC;
 
@@ -154,13 +155,13 @@ public class GBLSTM {
                 .addLayer("lstm6",
                         new LSTM.Builder().nIn(128).nOut(128).activation(Activation.TANH).dropOut(0.6).l2(0.0005).build(), "lstm5")
                 .addLayer("maxout1",
-                        new DenseLayer.Builder().nIn(128).nOut(128).activation(new CustomActivation()).build(), "lstm5")
+                        new DenseLayer.Builder().nIn(128).nOut(128).activation(new CustomActivation()).updater(new RmsProp.Builder().learningRate(learningRate).build()).build(), "lstm5")
                 .addLayer("maxout2",
-                        new DenseLayer.Builder().nIn(128).nOut(128).activation(new CustomActivation()).build(), "maxout1")
+                        new DenseLayer.Builder().nIn(128).nOut(128).activation(new CustomActivation()).updater(new RmsProp.Builder().learningRate(learningRate).build()).build(), "maxout1")
                 .addLayer("maxout3",
-                        new DenseLayer.Builder().nIn(128).nOut(128).activation(new CustomActivation()).build(), "maxout2")
+                        new DenseLayer.Builder().nIn(128).nOut(128).activation(new CustomActivation()).updater(new RmsProp.Builder().learningRate(learningRate).build()).build(), "maxout2")
                 .addLayer("Last_Dense",
-                        new DenseLayer.Builder().nIn(128).nOut(128).activation(Activation.LEAKYRELU).build(), "")
+                        new DenseLayer.Builder().nIn(128).nOut(128).activation(Activation.LEAKYRELU).updater(new RmsProp.Builder().learningRate(learningRate).build()).build(), "")
                 .addLayer("_",
                         new BatchNormalization.Builder().build())
                 .addLayer("output",
