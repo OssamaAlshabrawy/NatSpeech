@@ -161,7 +161,7 @@ public class GBLSTM {
                 .addLayer("maxout3",
                         new DenseLayer.Builder().nIn(128).nOut(128).activation(new CustomActivation()).updater(new RmsProp.Builder().learningRate(learningRate).build()).build(), "maxout2")
                 .addLayer("Last_Dense",
-                        new DenseLayer.Builder().nIn(128).nOut(128).activation(Activation.LEAKYRELU).updater(new RmsProp.Builder().learningRate(learningRate).build()).build(), "")
+                        new DenseLayer.Builder().nIn(128).nOut(128).activation(Activation.LEAKYRELU).updater(new RmsProp.Builder().learningRate(learningRate).build()).build(), "maxout3")
                 .addLayer("_",
                         new BatchNormalization.Builder().build())
                 .addLayer("output",
