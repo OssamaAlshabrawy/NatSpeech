@@ -16,7 +16,7 @@ $ mvn clean install
 ```
 
 **The preprocessing:**
-The wav files should be copied to the wav sub-directory in data directory and annotation files to annotationFiles sub-directory. The annotation file should be in .csv format with 3 columns. The first column is the label such as (S1: for the wearer; M1, M2, etc: other male speaker; F1, F2, etc: other female speakers). The second and third coulmn contains the start and end respectively in milliseconds. 
+The wav files should be copied to the wav sub-directory in data directory and annotation files to annotationFiles sub-directory. The annotation file should be in .csv format with 3 columns. The first column is the label such as (speech, non-speech). The second and third coulmn contains the start and end respectively in milliseconds. 
 *Then follow the steps to run the preprocessing:*
 1. Run the file: RunFrames.java, then all the frames files will go to framesFiles sub-directory
 2. Run the file: RunTrainingSamples.java, in order to get the annotated frames. Each frames is a row and the label will be the last coulmn in that row. Since we have 256 frame length, then the label will aprrear as the 257th column.

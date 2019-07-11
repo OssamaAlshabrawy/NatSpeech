@@ -64,9 +64,7 @@ public class RunTrainingSamples {
 			int frame_start = inc * ind_fr;
 			int frame_end = frame_start + wl - 1;
 			for (int j = 0; j < Is_Speech.size(); j++) {
-				if (Is_Speech.get(j).contains("S1") || Is_Speech.get(j).contains("M1") ||
-						Is_Speech.get(j).contains("M2")  || Is_Speech.get(j).contains("F1") ||
-						Is_Speech.get(j).contains("F2") ) {
+				if (Is_Speech.get(j).contains("speech")) {
 					int annot_start = (int) ((From.get(j) / 1000.0) * g.getSampleRate());
 					int annot_end = (int) ((To.get(j) / 1000.0) * g.getSampleRate());
 					if (frame_start >= annot_start && frame_start <= annot_end &&
